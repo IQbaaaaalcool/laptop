@@ -17,35 +17,35 @@ hamburger.addEventListener('click',function(){
 const laptop = [
     {
         nomor : '1',
-        nama: 'Unyil 15 - A11S',
+        nama: 'Ambatuhkan 15 - A11S',
         description: 'Laptop Terbaik abad 21',
         price: 'Rp. 10.000.000',
         img: './images/laptop-1.png'
     },
     {
         nomor : '2',
-        nama: 'Unyil S5 - A11B',
+        nama: 'Laptop S5 - A11B',
         description: 'Laptop Terbaik abad 22',
         price: 'Rp. 10.999.000',
         img: './images/laptop-2.png'
     },
     {
         nomor : '3',
-        nama: 'Unyil 17 - A134S',
+        nama: 'Msi 17 - A134S',
         description: 'Laptop Terbaik abad 23',
         price: 'Rp. 10.900.500',
         img: './images/laptop-3.png'
     },
     {
         nomor : '4',
-        nama: 'Unyil 12 - A22S',
+        nama: 'iwan 12 - A22S',
         description: 'Laptop Terbaik abad 24',
         price: 'Rp. 8.000.000',
         img: './images/laptop-4.png'
     },
     {
         nomor : '5',
-        nama: 'Unyil 202 - K913',
+        nama: 'andik 202 - K913',
         description: 'Laptop Terbaik abad 25',
         price: 'Rp. 9.000.000',
         img: './images/laptop-5.png'
@@ -56,7 +56,7 @@ let nomor = 0
 let maksimallaptop = laptop.length
 let selected = {
     nomor: '1',
-    nama: 'Unyil 15 - A11S',
+    nama: 'Ambatuhkan 15 - A11S',
     description: 'Laptop Terbaik abad 21',
     price: 'Rp. 10.000.000',
     img: './images/omen.png',
