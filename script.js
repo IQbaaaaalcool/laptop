@@ -1,94 +1,127 @@
-// Fungsi Hamburger
+const namaLaptop = document.querySelector('#nama-laptop')
+const deskripsiLaptop = document.querySelector('#deskripsi-laptop')
+const hargaLaptop = document.querySelector('#harga-laptop')
+const maxLaptop = document.querySelector('#maksimal-laptop')
+const gambarLaptop = document.querySelector('#gambar-laptop')
+const nomorLaptop = document.querySelector('#nomor-laptop')
+
+
 const hamburger = document.querySelector('#hamburger')
+const navigation = document.querySelector('#navigation')
 
-hamburger.addEventListener('click', function(){
-  hamburger.classList.toggle('hamburger-active')
-})
+hamburger.addEventListener('click',function(){
+    hamburger.classList.toggle('hamburger-active')
+    navigation.classList.toggle('hidden')
+});
 
-// Data Laptop
 const laptop = [
-  {
-    number: '01',
-    name: 'Unyil 15 - A11S',
-    description: 'Laptop terbaik abad 21',
-    price: 'Rp. 16.502.850',
-    img: './images/laptop-1.png'
-  },
-  {
-    number: '02',
-    name: 'Unyil A5 - B35',
-    description: 'Laptop terbaik sepanjang masa',
-    price: 'Rp. 24.000.950',
-    img: './images/laptop-2.png'
-  },
-  {
-    number: '03',
-    name: 'Unyil S5 - Gaming',
-    description: 'Laptop gaming terbaik sepanjang masa',
-    price: 'Rp. 10.200.400',
-    img: './images/laptop-3.png'
-  },
-  {
-    number: '04',
-    name: 'Unyil SS3 - U20',
-    description: 'Laptop terbaik sepanjang abad',
-    price: 'Rp. 8.300.275',
-    img: './images/laptop-4.png'
-  },
-  {
-    number: '05',
-    name: 'Unyil T5 - X50',
-    description: 'Laptop terbaik semasa kecil',
-    price: 'Rp. 18.900.500',
-    img: './images/laptop-5.png'
-  },
+    {
+        nomor : '1',
+        nama: 'Unyil 15 - A11S',
+        description: 'Laptop Terbaik abad 21',
+        price: 'Rp. 10.000.000',
+        img: './images/omen.png'
+    },
+    {
+        nomor : '2',
+        nama: 'Unyil S5 - A11B',
+        description: 'Laptop Terbaik abad 22',
+        price: 'Rp. 10.999.000',
+        img: './images/laptop-2.png'
+    },
+    {
+        nomor : '3',
+        nama: 'Unyil 17 - A134S',
+        description: 'Laptop Terbaik abad 23',
+        price: 'Rp. 10.900.500',
+        img: './images/laptop3.png'
+    },
+    {
+        nomor : '4',
+        nama: 'Unyil 12 - A22S',
+        description: 'Laptop Terbaik abad 24',
+        price: 'Rp. 8.000.000',
+        img: './images/laptop.png'
+    },
+    {
+        nomor : '5',
+        nama: 'Unyil 202 - K913',
+        description: 'Laptop Terbaik abad 25',
+        price: 'Rp. 9.000.000',
+        img: './images/laptop-20.png'
+    },
 ]
 
 let nomor = 0
-let maksimalLaptop = laptop.length
+let maksimallaptop = laptop.length
 let selected = {
-  number: '01',
-  name: 'Unyil 15 - A11S',
-  description: 'Laptop terbaik abad 21',
-  price: 'Rp. 16.502.850',
-  img: './images/laptop-1.png'
+    nomor: '1',
+    nama: 'Unyil 15 - A11S',
+    description: 'Laptop Terbaik abad 21',
+    price: 'Rp. 10.000.000',
+    img: './images/omen.png',
 }
 
 const previousButton = document.querySelector('#previousButton')
 const nextButton = document.querySelector('#nextButton')
 
 nextButton.addEventListener('click', function(){
-  if(nomor >= maksimalLaptop - 1){
-    nomor = 0
-  }else{
-    nomor++;
-  }
-  selected = laptop[nomor]
-  showData()
+    namaLaptop.classList.add('animate-fade')
+    deskripsiLaptop.classList.add('animate-fade')
+    hargaLaptop.classList.add('animate-fade')
+    gambarLaptop.classList.add('animate-rotate-right')    
+
+    if(nomor >= maksimallaptop - 1){
+        nomor = 0
+    }else{
+        nomor++;
+    }
+    selected = laptop[nomor]
+    
+    setTimeout(function(){
+        showData() 
+    },400)
+
+    setTimeout(function(){
+        namaLaptop.classList.remove('animate-fade')
+        deskripsiLaptop.classList.remove('animate-fade')
+        hargaLaptop.classList.remove('animate-fade')
+        gambarLaptop.classList.remove('animate-rotate-right') 
+    },600)
 })
 
 previousButton.addEventListener('click', function(){
-  if(nomor <= 0){
-    nomor = maksimalLaptop - 1
-  }else{
-    nomor--;
-  }
-  selected = laptop[nomor]
-  showData()
+    namaLaptop.classList.add('animate-fade')
+    deskripsiLaptop.classList.add('animate-fade')
+    hargaLaptop.classList.add('animate-fade')
+    gambarLaptop.classList.add('animate-rotate-left')  
+
+    if(nomor <= 0){
+        nomor = maksimallaptop - 1
+    }else{
+        nomor--;
+    }
+    selected = laptop[nomor]
+
+    setTimeout(function(){
+        showData() 
+    },400)
+
+    setTimeout(function(){
+        namaLaptop.classList.remove('animate-fade')
+        deskripsiLaptop.classList.remove('animate-fade')
+        hargaLaptop.classList.remove('animate-fade')
+        gambarLaptop.classList.remove('animate-rotate-left') 
+    },600)
 })
 
-const namaLaptop = document.querySelector('#nama-laptop')
-const deskripsiLaptop = document.querySelector('#deskripsi-laptop')
-const hargaLaptop = document.querySelector('#harga-laptop')
-const nomorLaptop = document.querySelector('#nomor-laptop')
-const maxLaptop = document.querySelector('#maksimal-laptop')
-const gambarLaptop = document.querySelector('#gambar-laptop')
-
 function showData(){
-  namaLaptop.innerText = selected.name
-  deskripsiLaptop.innerText = selected.description
-  hargaLaptop.innerText = selected.price
-  gambarLaptop.src = selected.img
+    nomorLaptop.innerText = selected.nomor
+    namaLaptop.innerText = selected.nama
+    deskripsiLaptop.innerText = selected.description
+    hargaLaptop.innerText = selected.price
+    gambarLaptop.src = selected.img
+    maxLaptop.innerText = laptop[laptop.length -1].nomor
 }
 
 showData()
